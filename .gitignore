@@ -1,0 +1,10 @@
+#pictures
+*.jpg
+*.png
+*.gif
+
+#non-code folders
+/colours
+/favicons
+/fonts
+/images
