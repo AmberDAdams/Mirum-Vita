@@ -30,6 +30,11 @@ img {
   max-width: 100%;
 }
 
+header img {
+  height: 100%;
+  object-fit: cover;
+}
+
 header {
   background: #152d3d;
   color: #f9f7f6;
@@ -47,14 +52,45 @@ nav {
   border-top: 2px solid #aa9c8b;
 }
 
-nav a {
-  color: #152d3d;
-  font-weight: 600;
-}
-
 nav li {
   border-left: 2px ridge #7f878e;
+  font-size: 1.15rem;
   padding: 0 10px 0;
+}
+
+.navbar-brand {
+  padding: 0 10px !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  content: none !important;
+  height: 75px !important;
+  width: 100px !important;
+}
+
+.nav-link {
+  color: #102b3d;
+  font-weight: 600;
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+  color: #aa9c8b;
+}
+
+.active a {
+  color: #102b3d;
+}
+
+.active a:hover {
+  color: #aa9c8b;
 }
 
 @media (min-width: 768px) {
@@ -66,4 +102,10 @@ nav li {
   .leftmost-item {
     border-left: none;
   }
+}
+
+.hidden {
+  height: 0;
+  visibility: hidden;
+  width: 0;
 }
