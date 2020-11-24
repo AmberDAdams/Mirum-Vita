@@ -52,10 +52,26 @@ nav {
   border-top: 2px solid #aa9c8b;
 }
 
-nav li {
+.nav-item {
   border-left: 2px ridge #7f878e;
   font-size: 1.15rem;
   padding: 0 10px 0;
+  text-align: left;
+}
+
+@media (min-width: 992px) {
+  .nav-item {
+    text-align: center;
+  }
+}
+
+.sub-nav-item {
+  border-left: 1px ridge #aa9c8b;
+  font-size: .95rem;
+}
+
+.sub-nav-item .nav-link {
+  color: #15486a;
 }
 
 .navbar-brand {

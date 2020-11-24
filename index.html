@@ -28,13 +28,13 @@
         <div class="col-2 col-sm-3 col-md-1 col-lg-2 col-xl-3 header-line"></div>
         <div class="col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3 text-center">
           <h1>Mirum Vita</h1>
-          <h3>by Meredith Wall</h3>
+          <h3>by Meredith Wall, Ph. D</h3>
           <h5>Shaping Lives since 1996</h5>
         </div>
         <div class="col-2 col-sm-3 col-md-1 col-lg-2 col-xl-3 header-line"></div>
       </header>
       
-      <nav class="navbar navbar-expand-md">
+      <nav class="navbar navbar-expand-lg">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item leftmost-item active">
@@ -43,8 +43,16 @@
             <li class="nav-item">
               <a class="nav-link" href="/bookings">Bookings</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" onmouseover="expandServices()" onmouseleave="collapseServices()">
               <a class="nav-link" href="/services">Services</a>
+              <ul class="navbar-nav hidden" id="serviceDetails">
+                <li class="nav-item sub-nav-item leftmost-item">
+                  <a class="nav-link" href="/services/physical">Physical Therapy</a>
+                </li>
+                <li class="nav-item sub-nav-item">
+                  <a class="nav-link" href="/services/mental">&nbsp Life Coaching &nbsp</a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/testimonials">Testimonials</a>
@@ -75,6 +83,20 @@
         } else {
           navToggleImg.src = "/images/expand-navbar.png";
         };
+      };
+      
+      function expandServices() {
+        console.log("Expand");
+        var details = document.getElementById("serviceDetails");
+        console.log(details.className);
+        details.className = "navbar-nav";
+      };
+      
+      function collapseServices() {
+        console.log("Collapse");
+        var details = document.getElementById("serviceDetails");
+        console.log(details.className);
+        details.className = "navbar-nav hidden";
       };
     
     </script>
