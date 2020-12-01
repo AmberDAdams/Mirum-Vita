@@ -43,17 +43,17 @@
             <li class="nav-item">
               <a class="nav-link" href="/bookings">Bookings</a>
             </li>
-            <li class="nav-item" onmouseover="expandServices()" onmouseleave="collapseServices()">
-              <a class="nav-link" href="/services">Services</a>
-              <ul class="navbar-nav hidden" id="serviceDetails">
-                <li class="nav-item sub-nav-item leftmost-item">
-                  <a class="nav-link" href="/services/physical">Physical Therapy</a>
-                </li>
-                <li class="nav-item sub-nav-item">
-                  <a class="nav-link" href="/services/mental">&nbsp Life Coaching &nbsp</a>
-                </li>
-              </ul>
-            </li>
+            <span id="serviceDetails">
+              <li class="nav-item">
+                <a class="nav-link" href="/services">Services</a>
+              </li>
+              <li class="nav-item sub-nav-item">
+                <a class="nav-link" href="/services/physical">Physical Therapy</a>
+              </li>
+              <li class="nav-item sub-nav-item">
+                <a class="nav-link" href="/services/mental">&nbsp Life Coaching &nbsp</a>
+              </li>
+            </span>
             <li class="nav-item">
               <a class="nav-link" href="/testimonials">Testimonials</a>
             </li>
@@ -72,7 +72,7 @@
     </div>
     
     <script>
-    
+        
       function togglerSwap() {
         var navToggleImg = document.getElementById("navToggleImg");
         if (navToggleImg.src.includes("expand")) {
@@ -81,21 +81,39 @@
           navToggleImg.src = "/images/expand-navbar.png";
         };
       };
-      
-      function expandServices() {
-        console.log("Expand");
-        var details = document.getElementById("serviceDetails");
-        console.log(details.className);
-        details.className = "navbar-nav";
-      };
-      
-      function collapseServices() {
-        console.log("Collapse");
-        var details = document.getElementById("serviceDetails");
-        console.log(details.className);
-        details.className = "navbar-nav hidden";
-      };
     
+      $(document).ready(function(){
+
+        function buildSubnav(mediaQuery) {
+          if (mediaQuery.matches) {
+            isLargeNav = true;
+            $(".sub-nav-item").hide();
+          } else {
+            isLargeNav = false;
+            $(".sub-nav-item").show();
+          }
+        };
+
+        var isLargeNav;
+        var mediaQuery = window.matchMedia("(min-width: 992px)")
+        buildSubnav(mediaQuery)
+        mediaQuery.addEventListener("change", event => {
+            buildSubnav(event);
+        });
+        
+        $("#serviceDetails").hover(function(){
+          if (isLargeNav) {
+            $(".sub-nav-item").show(350);
+          };
+        },
+        function(){
+          if (isLargeNav) {
+            $(".sub-nav-item").hide(350);
+          };
+        });
+
+      });
+
     </script>
   </body>
 </html>
