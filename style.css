@@ -95,7 +95,7 @@ nav {
 .nav-link {
   color: #102b3d;
   font-weight: 600;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem !important;
 }
 
 .nav-link:hover {
@@ -115,6 +115,9 @@ nav {
     -ms-flex-pack: center;
     justify-content: center;
   }
+}
+
+@media (min-width: 992px) {
   
   .leftmost-item {
     border-left: none;
