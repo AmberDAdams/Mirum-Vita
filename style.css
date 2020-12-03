@@ -64,12 +64,6 @@ nav {
   text-align: left;
 }
 
-@media (min-width: 992px) {
-  .nav-item {
-    text-align: center;
-  }
-}
-
 .sub-nav-item {
   border-left: 1px ridge #aa9c8b;
   font-size: .95rem;
@@ -115,6 +109,15 @@ nav {
   color: #aa9c8b;
 }
 
+/*
+bootstrap's breakpoints:
+  xs is less than 576px
+  sm: (min-width: 576px)
+  md: (min-width: 768px)
+  lg: (min-width: 992px)
+  xl: (min-width: 1200px)
+*/
+
 @media (min-width: 768px) {
   .navbar {
     -ms-flex-pack: center;
@@ -125,6 +128,10 @@ nav {
 @media (min-width: 992px) {
   .leftmost-item {
     border-left: none;
+  }
+  
+  .nav-item {
+    text-align: center;
   }
   
   .sub-nav-item {
