@@ -17,12 +17,16 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 50px;
   font-width: 700 !important;
-  padding: 25px 0 5px;
+  padding: 15px 0 5px;
   text-shadow:
     -1px -1px 0 #aa9c8b,
     1px -1px 0 #aa9c8b,
     -1px 1px 0 #aa9c8b,
     1px 1px 0 #aa9c8b;
+}
+
+h3 {
+  font-size: 25px;
 }
 
 h5 {
@@ -37,18 +41,21 @@ img {
 
 header img {
   height: 100%;
+  max-height: 275px;
   object-fit: cover;
+  width: 100%;
 }
 
 header {
   background: #152d3d;
   color: #f9f7f6;
   margin: 0 0 -3px;
+  max-height: 450px;
 }
 
 .header-line {
   border-top: 1px groove #aa9c8b;
-  margin: 110px 0;
+  margin: 100px 0;
 }
 
 nav {
@@ -117,6 +124,24 @@ bootstrap's breakpoints:
   lg: (min-width: 992px)
   xl: (min-width: 1200px)
 */
+
+@media (min-width: 576px) {
+  header img {
+    max-height: 275px;
+  }
+
+  header {
+    max-height: 275px;
+  }
+  
+  h1 {
+    padding: 25px 0 5px;
+  }
+
+  .header-line {
+    margin: 110px 0;
+  }
+}
 
 @media (min-width: 768px) {
   .navbar {
