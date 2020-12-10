@@ -9,7 +9,7 @@ body {
   background: #aa9c8b;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5 {
 	font-family: 'Charmonman', cursive;
   font-width: 400;
 }
@@ -166,4 +166,81 @@ bootstrap's breakpoints:
   #serviceDetails li {
     float: left;
   }
+}
+
+main {
+  padding: 40px 10px;
+  text-align: center;
+}
+
+main h2 {
+  font-weight: 700;
+  text-shadow:
+    -1px -1px 0 #78858d,
+    1px -1px 0 #78858d,
+    -1px 1px 0 #78858d,
+    1px 1px 0 #78858d;
+}
+
+form {
+  background: #aa9c8b;
+  border: 3px ridge #78858d;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 20px 10px;
+  width: 55%;
+}
+
+form .large-label {
+  color: #15486a;
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 3px 0;
+}
+
+h6.large-label {
+  margin: 0 0 4px 70px;
+}
+
+.form-element {
+  padding: 10px 0;
+}
+
+.avail-element {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.avail-label {
+  font-size: 17px;
+  line-height: 20px;
+  width: 110px;
+}
+
+#avail-cont {
+  margin: 0 30px;
+  width: 80%;
+}
+
+form input, textarea, select {
+  border: 1px solid #78858d;
+  border-radius: 3px;
+  padding: 3px 0 3px 10px;
+  width: 90%;
+}
+
+.avail-element select {
+  height: 25px;
+  font-size: 15px;
+  margin: 3px 5px;
+  padding: 2px 0 0 10px;
+}
+
+form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.btn-info {
+  background: #78858d;
 }
