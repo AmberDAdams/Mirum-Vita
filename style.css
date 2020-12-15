@@ -141,12 +141,32 @@ bootstrap's breakpoints:
   .header-line {
     margin: 110px 0;
   }
+  
+  form {
+    width: 85% !important;
+  }
 }
 
 @media (min-width: 768px) {
   .navbar {
     -ms-flex-pack: center;
     justify-content: center;
+  }
+  
+  form {
+    width: 75% !important;
+  }
+
+  #avail-cont {
+    margin: 0;
+    width: 90%;
+  }
+  
+  .avail-element {
+    margin: 0 auto;
+    text-align: right;
+    white-space: nowrap;
+    width: 100%
   }
 }
 
@@ -165,6 +185,16 @@ bootstrap's breakpoints:
   
   #serviceDetails li {
     float: left;
+  }
+  
+  form {
+    width: 65% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  form {
+    width: 55% !important;
   }
 }
 
@@ -188,18 +218,18 @@ form {
   border-radius: 20px;
   margin: 0 auto;
   padding: 20px 10px;
-  width: 55%;
+  width: 85%;
 }
 
 form .large-label {
   color: #15486a;
   display: block;
   font-weight: 600;
-  margin: 10px 0 3px 0;
+  margin: 10px 0 3px 0px;
 }
 
 h6.large-label {
-  margin: 0 0 4px 70px;
+  margin: 0 0 4px 0;
 }
 
 .form-element {
@@ -207,22 +237,24 @@ h6.large-label {
 }
 
 .avail-element {
-  text-align: right;
+  margin: 0 auto;
   white-space: nowrap;
+  width: 100%
 }
 
 .avail-label {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 20px;
-  width: 110px;
+  margin: 5px 0 0 0;
 }
 
 #avail-cont {
-  margin: 0 30px;
-  width: 80%;
+  margin: 5%;
+  width: 90%;
 }
 
 form input, textarea, select {
+  background: #fbfaf9;
   border: 1px solid #78858d;
   border-radius: 3px;
   padding: 3px 0 3px 10px;
@@ -232,7 +264,7 @@ form input, textarea, select {
 .avail-element select {
   height: 25px;
   font-size: 15px;
-  margin: 3px 5px;
+  margin: 3px 0;
   padding: 2px 0 0 10px;
 }
 
@@ -243,4 +275,20 @@ form textarea {
 
 .btn-info {
   background: #78858d;
+}
+
+.warning {
+  background: #152d3d;
+  color: #ad361f;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 30px;
+  width: 100%;
+}
+
+.hidden {
+  height: 0;
+  visibility: hidden;
+  width: 0;
 }

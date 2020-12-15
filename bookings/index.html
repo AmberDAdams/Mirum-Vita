@@ -76,6 +76,7 @@
       
         <form>
           <h3><strong>Booking Form</strong></h3>
+          <h6 class="warning hidden" id="incomplete_form">Please Complete All Fields.</h6>
           <div class="row">
             <span class="form-element col-12 col-sm-5">
               <label for="name" class="large-label">Name</label>
@@ -83,7 +84,7 @@
             </span>
             <span class="form-element col-12 col-sm-3">
               <label for="dob" class="large-label">Date of Birth</label>
-              <input type="date" id="dob" name="visitor_dob" value="1980-01-01" required>
+              <input type="date" id="dob" name="visitor_dob" required>
             </span>
             <span class="form-element col-12 col-sm-4">
               <label for="postcode" class="large-label">Postal Code</label>
@@ -91,91 +92,91 @@
             </span>
           </div>
           <div class="row">
-            <span class="form-element col-8">
+            <span class="form-element col-12 col-sm-8">
               <label for="email" class="large-label">Email Address</label>
               <input type="text" id="email" name="visitor_email" placeholder="example@example.com" required>
             </span>
-            <span class="form-element col-4">
+            <span class="form-element col-12 col-sm-4">
               <label for="phone" class="large-label">Contact Number</label>
               <input type="text" id="phone" name="visitor_phone" placeholder="07777 777777" pattern=[0-9\s]{10,13} required>
             </span>
           </div>
           <div class="form-element" id="avail-cont">
             <h6 class="large-label">Availability</h6>
-            <span class="avail-element">
-              <label class="avail-label" for="mon">Mondays</label>
-              <select id="mon" name="mon_times">
-                <option value="all">All Day</option>
-                <option value="morning">Mornings</option>
-                <option value="afternoon">Afternoons</option>
-                <option value="evening">Evenings</option>
-                <option value="none">No Availability</option>
+            <span class="avail-element row">
+              <label class="avail-label col-12 col-md-3" for="mon">Mondays</label>
+              <select class="col-12 col-md-9" id="mon" name="mon_times">
+                <option value="All Day">All Day</option>
+                <option value="Mornings">Mornings</option>
+                <option value="Afternoons">Afternoons</option>
+                <option value="Evenings">Evenings</option>
+                <option value="No Availability">No Availability</option>
               </select>
             </span>
-            <span class="avail-element">
-              <label class="avail-label" for="tues">Tuesdays</label>
-              <select id="tues" name="tues_times">
-                <option value="all">All Day</option>
-                <option value="morning">Mornings</option>
-                <option value="afternoon">Afternoons</option>
-                <option value="evening">Evenings</option>
-                <option value="none">No Availability</option>
+            <span class="avail-element row">
+              <label class="avail-label col-12 col-md-3" for="tues">Tuesdays</label>
+              <select class="col-12 col-md-9" id="tues" name="tues_times">
+                <option value="All Day">All Day</option>
+                <option value="Mornings">Mornings</option>
+                <option value="Afternoons">Afternoons</option>
+                <option value="Evenings">Evenings</option>
+                <option value="No Availability">No Availability</option>
               </select>
             </span>
-            <span class="avail-element">
-              <label class="avail-label" for="wed">Wednesdays</label>
-              <select id="wed" name="wed_times">
-                <option value="all">All Day</option>
-                <option value="morning">Mornings</option>
-                <option value="afternoon">Afternoons</option>
-                <option value="evening">Evenings</option>
-                <option value="none">No Availability</option>
+            <span class="avail-element row">
+              <label class="avail-label col-12 col-md-3" for="wed">Wednesdays</label>
+              <select class="col-12 col-md-9" id="wed" name="wed_times">
+                <option value="All Day">All Day</option>
+                <option value="Mornings">Mornings</option>
+                <option value="Afternoons">Afternoons</option>
+                <option value="Evenings">Evenings</option>
+                <option value="No Availability">No Availability</option>
               </select>
             </span>
-            <span class="avail-element">
-              <label class="avail-label" for="thurs">Thursdays</label>
-              <select id="thurs" name="thurs_times">
-                <option value="all">All Day</option>
-                <option value="morning">Mornings</option>
-                <option value="afternoon">Afternoons</option>
-                <option value="evening">Evenings</option>
-                <option value="none">No Availability</option>
+            <span class="avail-element row">
+              <label class="avail-label col-12 col-md-3" for="thurs">Thursdays</label>
+              <select class="col-12 col-md-9" id="thurs" name="thurs_times">
+                <option value="All Day">All Day</option>
+                <option value="Mornings">Mornings</option>
+                <option value="Afternoons">Afternoons</option>
+                <option value="Evenings">Evenings</option>
+                <option value="No Availability">No Availability</option>
               </select>
             </span>
-            <span class="avail-element">
-              <label class="avail-label" for="fri">Fridays</label>
-              <select id="fri" name="fri_times">
-                <option value="all">All Day</option>
-                <option value="morning">Mornings</option>
-                <option value="afternoon">Afternoons</option>
-                <option value="evening">Evenings</option>
-                <option value="none">No Availability</option>
+            <span class="avail-element row">
+              <label class="avail-label col-12 col-md-3" for="fri">Fridays</label>
+              <select class="col-12 col-md-9" id="fri" name="fri_times">
+                <option value="All Day">All Day</option>
+                <option value="Mornings">Mornings</option>
+                <option value="Afternoons">Afternoons</option>
+                <option value="Evenings">Evenings</option>
+                <option value="No Availability">No Availability</option>
               </select>
             </span>
-            <span class="avail-element">
-              <label class="avail-label" for="sat">Saturdays</label>
-              <select id="sat" name="sat_times">
-                <option value="all">All Day</option>
-                <option value="morning">Mornings</option>
-                <option value="afternoon">Afternoons</option>
-                <option value="evening">Evenings</option>
-                <option value="none">No Availability</option>
+            <span class="avail-element row">
+              <label class="avail-label col-12 col-md-3" for="sat">Saturdays</label>
+              <select class="col-12 col-md-9" id="sat" name="sat_times">
+                <option value="All Day">All Day</option>
+                <option value="Mornings">Mornings</option>
+                <option value="Afternoons">Afternoons</option>
+                <option value="Evenings">Evenings</option>
+                <option value="No Availability">No Availability</option>
               </select>
             </span>
-            <span class="avail-element">
-              <label class="avail-label" for="sun">Sundays</label>
-              <select id="sun" name="sun_times">
-                <option value="all">All Day</option>
-                <option value="morning">Mornings</option>
-                <option value="afternoon">Afternoons</option>
-                <option value="evening">Evenings</option>
-                <option value="none">No Availability</option>
+            <span class="avail-element row">
+              <label class="avail-label col-12 col-md-3" for="sun">Sundays</label>
+              <select class="col-12 col-md-9" id="sun" name="sun_times">
+                <option value="All Day">All Day</option>
+                <option value="Mornings">Mornings</option>
+                <option value="Afternoons">Afternoons</option>
+                <option value="Evenings">Evenings</option>
+                <option value="No Availability">No Availability</option>
               </select>
             </span>
           </div>
           <div class="form-element">
             <label for="summary" class="large-label">Summary of Personal History and Problems to be Fixed</label>
-            <textarea id="summary" name="personal_summary" placeholder="What can Meredith help you with?"></textarea>
+            <textarea id="summary" name="personal_summary" placeholder="What can Meredith help you with?" required></textarea>
           </div>
           <button onclick="sendBookingRequest()" type="submit" name="submit" class="btn btn-info mt-3">
             Submit
@@ -201,13 +202,25 @@
         };
       };
       
+      function filled(form_entries) {
+        if (arguments.visitor_name == "" || arguments.visitor_db == "" ||
+            arguments.visitor_postcode == "" || arguments.visitor_email == "" ||
+            arguments.visitor_phone == "" || arguments.personal_summary == "") {
+          console.log("invalid");
+          return false;
+        } else {
+          console.log("valid");
+          return true;
+        };
+      };
+      
       function sendBookingRequest() {
         var arguments = {
-          visitor_name: document.getElementById("name").value,
+          visitor_name: document.getElementById("name").value.trim(),
           visitor_dob: document.getElementById("dob").value,
-          visitor_postcode: document.getElementById("postcode").value,
-          visitor_email: document.getElementById("email").value,
-          visitor_phone: document.getElementById("phone").value,
+          visitor_postcode: document.getElementById("postcode").value.trim(),
+          visitor_email: document.getElementById("email").value.trim(),
+          visitor_phone: document.getElementById("phone").value.trim(),
           mon_avail: document.getElementById("mon").value,
           tues_avail: document.getElementById("tues").value,
           wed_avail: document.getElementById("wed").value,
@@ -215,7 +228,12 @@
           fri_avail: document.getElementById("fri").value,
           sat_avail: document.getElementById("sat").value,
           sun_avail: document.getElementById("sun").value,
-          personal_summary: document.getElementById("summary").value
+          personal_summary: document.getElementById("summary").value.trim()
+        };
+        
+        if (!filled(arguments)) {
+          document.getElementById("incomplete_form").className = "warning";
+          return;
         };
         
         emailjs.send('mirumvita_bookingform', 'template_oyu48pk', arguments, "user_5nJXJ9g3yY33uJLBBuheX")
