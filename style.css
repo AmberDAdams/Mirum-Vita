@@ -292,3 +292,21 @@ form textarea {
   visibility: hidden;
   width: 0;
 }
+
+#testimonials {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.testimonial {
+  border-top: 3px solid #152d3d;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 85%;
+}
+
+.testimonial iframe {
+  background: #f9f7f6;
+  border: 1px solid #78858d !important;
+  border-radius: 15px;
+}
