@@ -168,6 +168,10 @@ bootstrap's breakpoints:
     white-space: nowrap;
     width: 100%
   }
+
+  .testimonial {
+    width: 75% !important;
+  }
 }
 
 @media (min-width: 992px) {
@@ -190,11 +194,19 @@ bootstrap's breakpoints:
   form {
     width: 65% !important;
   }
+
+  .testimonial {
+    width: 70% !important;
+  }
 }
 
 @media (min-width: 1200px) {
   form {
     width: 55% !important;
+  }
+
+  .testimonial {
+    width: 65% !important;
   }
 }
 
@@ -299,7 +311,7 @@ form textarea {
 }
 
 .testimonial {
-  border-top: 3px solid #152d3d;
+  border-bottom: 3px solid #152d3d;
   margin: 0 auto;
   padding: 20px 0;
   width: 85%;
