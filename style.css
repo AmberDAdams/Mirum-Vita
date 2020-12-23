@@ -2,6 +2,7 @@ body {
 	background: #f9f4f0;
 	color: #152d3d;
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -218,8 +219,6 @@ main {
 main h2 {
   font-weight: 700;
   text-shadow:
-    -1px -1px 0 #78858d,
-    1px -1px 0 #78858d,
     -1px 1px 0 #78858d,
     1px 1px 0 #78858d;
 }
@@ -321,4 +320,41 @@ form textarea {
   background: #f9f7f6;
   border: 1px solid #78858d !important;
   border-radius: 15px;
+}
+
+.top-bit {
+  border-bottom: 3px groove #aa9c8b;
+  margin: 0 auto;
+  width: 94%;
+}
+
+section {
+  border-left: 2px groove #aa9c8b;
+  margin: 10px 0;
+  padding: 15px 0;
+}
+
+section h4 {
+  font-weight: 700;
+}
+
+section p {
+  color: #3b474f;
+  text-align: left;
+  padding: 5px 15px;
+}
+
+p a {
+  color: #15486a;
+  text-decoration: underline;
+}
+
+p a:hover {
+  color: #78858d;
+}
+
+#homepage-main p {
+  margin: 20px auto 0;
+  text-align: justify;
+  width: 60%;
 }
