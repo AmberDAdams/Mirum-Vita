@@ -12,12 +12,12 @@ body {
 
 h1, h2, h3, h4, h5 {
 	font-family: 'Charmonman', cursive;
-  font-width: 400;
+  font-weight: 400;
 }
 
 h1 {
   font-size: 50px;
-  font-width: 700 !important;
+  font-weight: 700 !important;
   padding: 15px 0 5px;
   text-shadow:
     -1px -1px 0 #aa9c8b,
@@ -61,8 +61,8 @@ header {
 
 nav {
   background: #78858d;
-  border-bottom: 4px solid #aa9c8b;
   border-top: 2px solid #aa9c8b;
+  box-shadow: 0 4px 3px #aa9c8b, 0 5px 1px #5f513f;
 }
 
 .nav-item {
@@ -138,13 +138,13 @@ bootstrap's breakpoints:
   h1 {
     padding: 25px 0 5px;
   }
+  
+  main {
+    width: 92% !important;
+  }
 
   .header-line {
     margin: 110px 0;
-  }
-  
-  form {
-    width: 85% !important;
   }
 }
 
@@ -152,10 +152,6 @@ bootstrap's breakpoints:
   .navbar {
     -ms-flex-pack: center;
     justify-content: center;
-  }
-  
-  form {
-    width: 75% !important;
   }
 
   #avail-cont {
@@ -168,6 +164,10 @@ bootstrap's breakpoints:
     text-align: right;
     white-space: nowrap;
     width: 100%
+  }
+  
+  main {
+    width: 80% !important;
   }
 
   .testimonial {
@@ -192,8 +192,8 @@ bootstrap's breakpoints:
     float: left;
   }
   
-  form {
-    width: 65% !important;
+  main {
+    width: 70% !important;
   }
 
   .testimonial {
@@ -202,22 +202,27 @@ bootstrap's breakpoints:
 }
 
 @media (min-width: 1200px) {
-  form {
-    width: 55% !important;
+  main {
+    width: 65% !important;
   }
-
   .testimonial {
     width: 65% !important;
   }
 }
 
 main {
-  padding: 40px 10px;
-  text-align: center;
+  background: #f9f7f6;
+  box-shadow: 3px 0 5px #5f513f, -3px 0 5px #5f513f;
+  margin: 0 auto;
+  padding: 20px 15px 10px 15px;
+  text-align: justify;
+  width: 96%;
 }
 
 main h2 {
   font-weight: 700;
+  margin: 15px 0;
+  text-align: center;
   text-shadow:
     -1px 1px 0 #78858d,
     1px 1px 0 #78858d;
@@ -228,8 +233,9 @@ form {
   border: 3px ridge #78858d;
   border-radius: 20px;
   margin: 0 auto;
+  text-align: center;
   padding: 20px 10px;
-  width: 85%;
+  width: 96%;
 }
 
 form .large-label {
@@ -344,8 +350,9 @@ section p {
   padding: 5px 15px;
 }
 
-p a {
-  color: #15486a;
+main a {
+  color: #aa9c8b;
+  font-weight: 600;
   text-decoration: underline;
 }
 
@@ -353,8 +360,52 @@ p a:hover {
   color: #78858d;
 }
 
-#homepage-main p {
-  margin: 20px auto 0;
-  text-align: justify;
-  width: 60%;
+.legal-section {
+  border: none !important;
+  margin: 5px auto;
+  text-align: left;
+  width: 90%;
+}
+
+.legal-section h6 {
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.policy-list {
+  list-style-type: upper-roman;
+}
+
+.policy-list li {
+  margin: 7px 0;
+  padding: 0 7px;
+}
+
+.policy-sublist {
+  list-style-type: lower-alpha;
+}
+
+footer {
+  background: #152d3d;
+  box-shadow: 0 -2px 1px #aa9c8b, 0 -3px 2px #5f513f;
+  color: #f9f7f6;
+  font-size: 12px;
+  text-align: center;
+  padding: 12px 20px;
+}
+
+footer a {
+  color: #f9f7f6;
+}
+
+footer a:hover {
+  color: #78858d;
+}
+
+section h4 {
+  text-align: center;
+}
+
+.top-bit p {
+  text-align: center;
 }
