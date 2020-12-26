@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Your One-Stop Well-Being Guru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirum Vita</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+  
+    <div class="container-fluid px-0">
+    
+      <header class="row no-gutters">
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-3">
+          <img src="/images/portrait.png"/>
+        </div>
+        <div class="col-2 col-sm-1 col-md-1 col-lg-2 col-xl-3 header-line"></div>
+        <div class="col-8 col-sm-6 col-md-6 col-lg-4 col-xl-3 text-center">
+          <h1>Mirum Vita</h1>
+          <h3>by Meredith Wall, Ph. D</h3>
+          <h5>Shaping Lives since 1996</h5>
+        </div>
+        <div class="col-2 col-sm-1 col-md-1 col-lg-2 col-xl-3 header-line"></div>
+      </header>
+      
+      <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item leftmost-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/bookings">Bookings</a>
+            </li>
+            <span id="serviceDetails">
+              <li class="nav-item">
+                <a class="nav-link" href="/services">Services</a>
+              </li>
+              <li class="nav-item sub-nav-item">
+                <a class="nav-link" href="/services/physical">Physical Therapy</a>
+              </li>
+              <li class="nav-item sub-nav-item">
+                <a class="nav-link" href="/services/mental">Life Coaching</a>
+              </li>
+            </span>
+            <li class="nav-item">
+              <a class="nav-link" href="/testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/gallery">Photo Gallery</a>
+            </li>
+          </ul>
+        </div>
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo-navbar.png" alt="Mirum Vita Logo" height="70px"/>
+        </a>
+        <button class="navbar-toggler" type="button" onclick="togglerSwap()" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+            <img src="/images/expand-navbar.png" id="navToggleImg" alt="Expand Navbar" height="70px"/>
+          </span>
+        </button>
+      </nav>
+      
+      <main role="main">
+        <h2>Privacy Policy</h2>
+        <section class="legal-section">
+          <h6>1. Introduction</h6>
+          <ol class="policy-list">
+            <li>
+              We are committed to safeguarding the privacy of our website
+              visitors and business customers. We recognize that our business
+              inherently works with sensitive personal data, and we are
+              committed to ensuring that all of our website visitors and
+              business customers are comfortable with our use of your data,
+              and that such data is appropriately handled.
+            </li>
+            <li>
+              This policy applies where we are acting as a data controller
+              with respect to the personal data of such persons; in other
+              words, where we determine the purposes and means of the
+              processing of that personal data.
+            </li>
+            <li>
+              We will never publish your personal data or share with third
+              parties unless given explicit permission in writing. When you
+              send data through the bookings request form, you provide consent for
+              us to reference and store that data as is required to schedule
+              appointments and perform the appropriate services. If you would
+              like us to delete any/all data we have for you, please email
+              mindbodysoullondon@gmail.com with the phrase "PERSONAL DATA
+              DELETION REQUEST" in the subject line of the email.
+            </li>
+            <li>
+              We use cookies on our website. Insofar as those cookies are not
+              strictly necessary for the provision of our website and services,
+              we will ask you to consent to our use of cookies when you first
+              visit our website.
+            </li>
+            <li>
+              In this policy, "we", "us" and "our" refer to Mirum Vita. For more
+              information about us, see Section 13.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>2. Credit</h6>
+          <ol class="policy-list">
+            <li>
+              This document was created using a template from Docular
+              ( <a href="https://seqlegal.com/free-legal-documents/privacy-policy">
+                  https://seqlegal.com/free-legal-documents/privacy-policy
+                </a>).
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>3. The Personal Data Which We Collect</h6>
+          <ol class="policy-list">
+            <li>
+              In this Section 3 we have set out the general categories of
+              personal data that we process.
+            </li>
+            <li>
+              We may process data enabling us to get in touch with you
+              ("contact data"). The contact data may include your name,
+              email address, telephone number, and/or social media account
+              identifiers. The source of the contact data is you, when it
+              is submitted through the form on the bookings section of
+              the website.
+            </li>
+            <li>
+              We may process information contained in or relating to any
+              communication that you send to us or that we send to you
+              ("communication data"). The communication data may include
+              information on mental and/or physical problems you are facing,
+              as well as data regarding your weekly schedule. Our website
+              will generate the metadata associated with communications made
+              using the website contact form.
+            </li>
+            <li>
+              We may process data about your use of our website and services
+              ("usage data"). The usage data may include your IP address,
+              geographical location, browser type and version, operating system,
+              referral source, length of visit, page views and website navigation
+              paths, as well as information about the timing, frequency and
+              pattern of your service use. The source of the usage data is a
+              combination of cookies and Amazon Cloudfront, our CDN.
+            </li>
+            <li>
+              We will never collect payments or transaction data through our website.
+              Any payments related to the services we provide will be processed externally.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>4. Purposes of Processing and Legal Bases</h6>
+          <ol class="policy-list">
+            <li>
+              In this Section 4, we have set out the purposes for which we may
+              process personal data and the legal bases of the processing.
+            </li>
+            <li>
+              <strong>Operations</strong> - We may process your personal data for the
+              purposes of operating our website, providing our services, generating
+              invoices, bills and other payment-related documentation, and credit
+              control. The legal basis for this processing is our legitimate
+              interests, namely the proper administration of our website, services
+              and business OR the performance of a contract between you and us
+              and/or taking steps, at your request, to enter into such a contract.
+            </li>
+            <li>
+              <strong>Publications</strong> - We may process your personal data
+              for the purposes of publishing such data on our website in accordance
+              with your express instructions. The legal basis for this processing
+              is our legitimate interests, namely the publication of content in
+              the ordinary course of our marketing operations. This processing
+              will only take place with your express consent and instructions.
+            </li>
+            <li>
+              <strong>Relationships and Communications</strong> - We may process
+              contact data, communication data, and/or usage data for the
+              purposes of communicating with you by email, SMS, and/or
+              telephone, providing support services and complaint handling.
+              The legal basis for this processing is consent.
+            </li>
+            <li>
+              <strong>Direct Marketing</strong> - We may process contact data,
+              communication data, and/or usage data for the purposes of creating,
+              targeting and sending direct marketing communications by email,
+              SMS, and making contact by telephone for marketing-related purposes.
+              The legal basis for this processing is consent.
+            </li>
+            <li>
+              <strong>Research and Analysis</strong> - We may process usage data
+              for the purposes of researching and analysing the use of our website
+              and services. The legal basis for this processing is our legitimate
+              interests, namely monitoring, supporting, improving and securing
+              our website, services and business generally.
+            </li>
+            <li>
+              <strong>Record Keeping</strong> - We may process your personal data
+              for the purposes of creating and maintaining our databases, back-up
+              copies of our databases and our business records generally. The
+              legal basis for this processing is our legitimate interests, namely
+              ensuring that we have access to all the information we need to
+              properly and efficiently run our business in accordance with this policy.
+            </li>
+            <li>
+              <strong>Security</strong> - We may process your personal data for the
+              purposes of security and the prevention of fraud and other criminal
+              activity. The legal basis of this processing is our legitimate
+              interests, namely the protection of our website, services and
+              business, and the protection of others.
+            </li>
+            <li>
+              <strong>Insurance and Risk Management</strong> - We may process
+              your personal data where necessary for the purposes of obtaining
+              or maintaining insurance coverage, managing risks and/or obtaining
+              professional advice. The legal basis for this processing is our
+              legitimate interests, namely the proper protection of our business
+              against risks.
+            </li>
+            <li>
+              <strong>Legal Claims</strong> - We may process your personal data
+              where necessary for the establishment, exercise or defence of legal
+              claims, whether in court proceedings or in an administrative or
+              out-of-court procedure. The legal basis for this processing is our
+              legitimate interests, namely the protection and assertion of our
+              legal rights, your legal rights and the legal rights of others.
+            </li>
+            <li>
+              <strong>Legal Compliance and Vital Interests</strong> - We may also
+              process your personal data where such processing is necessary for
+              compliance with a legal obligation to which we are subject or in
+              order to protect your vital interests or the vital interests of
+              another natural person.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>5. Providing Your Personal Data to Others</h6>
+          <ol class="policy-list">
+            <li>
+              Your personal data submitted through the bookings form will be
+              stored on the servers of our email provider, Google mail.
+            </li>
+            <li>
+              In addition to the above disclosure of personal data, we may
+              disclose your personal data where such disclosure is
+              necessary for compliance with a legal obligation
+              to which we are subject, or in order to protect your vital
+              interests or the vital interests of another natural person.
+              We may also disclose your personal data where such disclosure
+              is necessary for the establishment, exercise, or defence of
+              legal claims, whether in court proceedings or in an administrative
+              or out-of-court procedure.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>6. International Transfers of your Personal Data</h6>
+          <ol class="policy-list">
+            <li>
+              In this Section 6, we provide information about the circumstances
+              in which your personal data may be transferred to countries
+              outside the United Kingdom and the European Economic Area (EEA).
+            </li>
+            <li>
+              The hosting facilities for our website are provided by Amazon Web
+              Services and are situated in the United Kingdom (UK). We employ a
+              CDN to speed up the serving of the website, which does store website
+              data around the world; however this data is only the data used to
+              display the website and does not include any personal data, unless
+              you have given express consent for this data to be shown on our website.
+            </li>
+            <li>
+              After submitting an inquiry using the bookings form, your personal
+              data is sent to our Google e-mail account (mindbodysoullondon@gmail.com).
+              Google servers are situated around the world. The competent data
+              protection authorities have made an "adequacy decision" with respect
+              to the data protection laws of each of the applicable countries.
+              Transfers to each of these countries will be protected by appropriate
+              safeguards, which are implemented by Google. Further detail regarding
+              Google's privacy policies can be found at
+              <a href="https://workspace.google.com/security/?secure-by-design_activeEl=data-centers">
+                https://workspace.google.com/security/?secure-by-design_activeEl=data-centers
+              </a>.
+            </li>
+            <li>
+              After submitting an inquiry using the bookings form, your personal
+              data is sent through a service called EmailJS which allows us to
+              forward your information to our email address without running our
+              own server. EmailJS is not a UK nor EEA based company. Your data
+              will not be stored on EmailJS servers. If you would prefer for
+              none of your personal information to be sent through EmailJS, you
+              can alternatively directly contact mindbodysoullondon@gmail.com
+              with the same information as is requested on the bookings form.
+            </li>
+            <li>
+              You acknowledge that personal data that you submit for publication
+              through our website or services may be available, via the internet,
+              around the world, when given express permission. We cannot prevent
+              the use (or misuse) of such personal data by others.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>7. Retention and Deletion of Personal Data</h6>
+          <ol class="policy-list">
+            <li>
+              This Section 7 sets out our data retention policies and procedures,
+              which are designed to help ensure that we comply with our legal
+              obligations in relation to the retention and deletion of personal data.
+            </li>
+            <li>
+              Personal data that we process for any purpose or purposes shall
+              not be kept for longer than is necessary for that purpose or
+              those purposes.
+            </li>
+            <li>
+              We will retain your personal data as follows:
+              <ol class="policy-sublist">
+                <li>
+                  Contact data will be retained for a minimum period of one
+                  month following the date of the most recent contact between
+                  you and us, and for a maximum period of one year following
+                  that date;
+                </li>
+                <li>
+                  Transaction data will be retained for a minimum period of
+                  one month following the date of the transaction, and for a
+                  maximum period of one year following that date;
+                </li>
+                <li>
+                  Communication data will be retained for a minimum period of
+                  three months following the date of the communication in
+                  question, and for a maximum period of one year following that
+                  date, and;
+                </li>
+                <li>
+                  Usage data will be retained for five years following the date
+                  of collection, and will be fully anonymised after the first
+                  six months of this period.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Notwithstanding the other provisions of this Section 7, we may
+              retain your personal data where such retention is necessary for
+              compliance with a legal obligation to which we are subject, or
+              in order to protect your vital interests or the vital interests
+              of another natural person.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>8. Your Rights</h6>
+          <ol class="policy-list">
+            <li>
+              In this Section 8, we have listed the rights that you have under
+              data protection law.
+            </li>
+            <li>
+              Your principal rights under data protection law are:
+              <ol class="policy-sublist">
+                <li>
+                  <strong>the right to access</strong> - you can ask for
+                  copies of your personal data;
+                </li>
+                <li>
+                  <strong>the right to rectification</strong> - you can
+                  ask us to rectify inaccurate personal data and to
+                  complete incomplete personal data;
+                </li>
+                <li>
+                  <strong>the right to erasure</strong> - you can ask
+                  us to erase your personal data;
+                </li>
+                <li>
+                  <strong>the right to restrict processing</strong> - you
+                  can ask us to restrict the processing of your personal data;
+                </li>
+                <li>
+                  <strong>the right to object to processing</strong> -
+                  you can object to the processing of your personal data;
+                </li>
+                <li>
+                  <strong>the right to data portability</strong> - you can ask
+                  that we transfer your personal data to another organisation
+                  or to you;
+                </li>
+                <li>
+                  <strong>the right to complain to a supervisory authority</strong>
+                  - you can complain about our processing of your personal data, and;
+                </li>
+                <li>
+                  <strong>the right to withdraw consent</strong> - to the extent
+                  that the legal basis of our processing of your personal data is
+                  consent, you can withdraw the consent.
+                </li>
+              </ol>
+            </li>
+            <li>
+              These rights are subject to certain limitations and exceptions.
+              You can learn more about the rights of data subjects by visiting
+              <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/">
+              https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/</a>.
+            </li>
+            <li>
+              You may exercise any of your rights in relation to your personal
+              data by written notice to us, using the contact details set out below.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>9. About Cookies</h6>
+          <ol class="policy-list">
+            <li>
+              A cookie is a file containing an identifier (a string of letters
+              and numbers) that is sent by a web server to a web browser and
+              is stored by the browser. The identifier is then sent back to
+              the server each time the browser requests a page from the server.
+            </li>
+            <li>
+              Cookies may be either "persistent" cookies or "session" cookies:
+              a persistent cookie will be stored by a web browser and will
+              remain valid until its set expiry date, unless deleted by the
+              user before the expiry date; a session cookie, on the other
+              hand, will expire at the end of the user session, when the web
+              browser is closed.
+            </li>
+            <li>
+              Cookies may not contain any information that personally identifies
+              a user, but personal data that we store about you may be linked
+              to the information stored in and obtained from cookies.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>10. Cookies Which We Use</h6>
+          <ol class="policy-list">
+            <li>
+              We use cookies for the following purposes:
+              <ol class="policy-sublist">
+                <li>
+                  <strong>Personalisation</strong> - we use cookies to
+                  store information about your visits to our website and to
+                  personalise our website for you;
+                </li>
+                <li>
+                  <strong>Analysis</strong> - we use cookeis to help us analyse
+                  the use and performance of our website and services, and;
+                </li>
+                <li>
+                  <strong>Cookie Consent</strong> - we use cookies to store your
+                  preferences in relation to the use of cookies more generally.
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>11. Managing Cookies</h6>
+          <ol class="policy-list">
+            <li>
+              Most browsers allow you to refuse to accept cookies and to delete
+              cookies. The methods for doing so vary from browser to browser,
+              and from version to version. You can however obtain up-to-date
+              information about blocking and deleting cookies via these links:
+              <ol class="policy-sublist">
+                <li>
+                  <a href="https://support.google.com/chrome/answer/95647">
+                    Managing cookies for <strong>Chrome</strong>;
+                  </a>
+                </li>
+                <li>
+                  <a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences">
+                    Managing cookies for <strong>Firefox</strong>;
+                  </a>
+                </li>
+                <li>
+                  <a href="https://help.opera.com/en/latest/security-and-privacy/">
+                    Managing cookies for <strong>Opera</strong>;
+                  </a>
+                </li>
+                <li>
+                  <a href="https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies">
+                    Managing cookies for <strong>Internet Explorer</strong>;
+                  </a>
+                </li>
+                <li>
+                  <a href="https://support.apple.com/en-gb/guide/safari/manage-cookies-and-website-data-sfri11471/mac">
+                    Managing cookies for <strong>Safari</strong>;
+                  </a>
+                </li>
+                <li>
+                  <a href="https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy">
+                    Managing cookies for <strong>Edge</strong>;
+                  </a>
+                </li>
+              </ol>
+            </li>
+            <li>
+              Blocking all cookies will have a negative impact upon the usability
+              of many websites.
+            </li>
+            <li>
+              If you block cookies, you may not be able to use all
+              features on our website.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>12. Amendments</h6>
+          <ol class="policy-list">
+            <li>
+              We may update this policy from time to time by publishing a new
+              version on our website.
+            </li>
+            <li>
+              You should check this page occasionally to ensure you are happy
+              with any changes to this policy.
+            </li>
+          </ol>
+        </section>
+        <section class="legal-section">
+          <h6>13. Our Details</h6>
+          <ol class="policy-list">
+            <li>
+              This website is owned and operated by Mirum Vita.
+              <ol class="policy-sublist">
+                <li>Mirum Vita is owned and operated by Meredith Wall;</li>
+                <li>Our website is run and maintained by Amber Adams, and;</li>
+                <li>Assistance with our website and our services is provided
+                by Karis Denieffe-George.</li>
+              </ol>
+            </li>
+            <li>
+              You can contact us by email at mindbodysoullondon@gmail.com.
+              <ol class="policy-sublist">
+                <li>
+                  For personal data concerns, please include the phrase
+                  "PERSONAL DATA" in the subject line of the email.
+                </li>
+                <li>
+                  For other inquiries, please include a descriptive subject
+                  line and as much information as possible within the body
+                  of the email so that we are able to get back to you as
+                  quickly and accurately as possible. 
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </section>
+      </main>
+      
+      <footer class="row">
+        <div class="col-12 col-md-4">
+          <a href="\terms" target="_blank">Terms</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; <a href="\privacy" target="_blank">Privacy</a>
+        </div>
+        <div class="col-12 col-md-4">&#169; 2020 Mirum Vita</div>
+        <div class="col-12 col-md-4">
+          <a href="https://www.facebook.com/mirumvita/" target="_blank">Visit our Facebook</a> &nbsp;&nbsp;&nbsp;|
+          &nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/mirumvita/" target="_blank">Visit our Instagram</a>
+        </div>
+      </footer>
+      
+    </div>
+    
+    <script>
+        
+      function togglerSwap() {
+        var navToggleImg = document.getElementById("navToggleImg");
+        if (navToggleImg.src.includes("expand")) {
+          navToggleImg.src = "/images/collapse-navbar.png";
+        } else {
+          navToggleImg.src = "/images/expand-navbar.png";
+        };
+      };
+    
+      $(document).ready(function(){
+
+        function buildSubnav(mediaQuery) {
+          if (mediaQuery.matches) {
+            isLargeNav = true;
+            $(".sub-nav-item").hide();
+          } else {
+            isLargeNav = false;
+            $(".sub-nav-item").show();
+          }
+        };
+
+        var isLargeNav;
+        var mediaQuery = window.matchMedia("(min-width: 992px)")
+        buildSubnav(mediaQuery)
+        mediaQuery.addEventListener("change", event => {
+            buildSubnav(event);
+        });
+        
+        $("#serviceDetails").hover(function(){
+          if (isLargeNav) {
+            $(".sub-nav-item").show(350);
+          };
+        },
+        function(){
+          if (isLargeNav) {
+            $(".sub-nav-item").hide(350);
+          };
+        });
+
+      });
+
+    </script>
+  </body>
+</html>

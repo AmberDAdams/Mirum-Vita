@@ -57,6 +57,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="/testimonials">Testimonials <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/gallery">Photo Gallery</a>
+            </li>
           </ul>
         </div>
         <a class="navbar-brand" href="/">
@@ -75,12 +78,12 @@
       
       <footer class="row">
         <div class="col-12 col-md-4">
-          <a href="\terms">Terms</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; <a href="\privacy">Privacy</a>
+          <a href="\terms" target="_blank">Terms</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; <a href="\privacy" target="_blank">Privacy</a>
         </div>
         <div class="col-12 col-md-4">&#169; 2020 Mirum Vita</div>
         <div class="col-12 col-md-4">
-          <a href="https://www.facebook.com/mirumvita/">Visit our Facebook</a> &nbsp;&nbsp;&nbsp;|
-          &nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/mirumvita/">Visit our Instagram</a>
+          <a href="https://www.facebook.com/mirumvita/" target="_blank">Visit our Facebook</a> &nbsp;&nbsp;&nbsp;|
+          &nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/mirumvita/" target="_blank">Visit our Instagram</a>
         </div>
       </footer>
       
@@ -100,14 +103,26 @@
       $(document).ready(function(){
         
         $.getJSON('testimonials.json', function(data) {
-          console.log("doing tests");
           let testimonialHTML = '';
           $.each(data, function(reviewer, details) {
-            testimonialHTML += '<li class="testimonial">';
-            testimonialHTML += details.iframe;
+            let firstname = reviewer.split(" ")[0];
+            if (firstname.toLowerCase().charAt(firstname.length-1) == "s") {
+              firstname = firstname + "'";
+            } else {
+              firstname = firstname + "'s";
+            };
+            testimonialHTML += '<li class="testimonial"><blockquote>';
+            testimonialHTML += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + details.text;
+            testimonialHTML += '</blockquote><h6>~ ' + reviewer + "</h6>";
+            if (details.images != "") {
+              testimonialHTML += '<div class="img-link"><strong>See pictures of ' + firstname;
+              testimonialHTML += ' transformation <a href="' + details.images + '">here</a>!</strong></div>';
+            };
             testimonialHTML += '</li>';
           });
-          console.log(testimonialHTML);
+          testimonialHTML += '<blockquote class="pt-4"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+          testimonialHTML += 'You can have similar changes in your life! Use the form ';
+          testimonialHTML += '<a href="/bookings">here</a> to get started with us.</strong></blockquote>';
           $("#testimonials").html(testimonialHTML);
         });
 
