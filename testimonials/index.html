@@ -115,8 +115,10 @@
             testimonialHTML += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + details.text;
             testimonialHTML += '</blockquote><h6>~ ' + reviewer + "</h6>";
             if (details.images != "") {
-              testimonialHTML += '<div class="img-link"><strong>See pictures of ' + firstname;
-              testimonialHTML += ' transformation <a href="' + details.images + '">here</a>!</strong></div>';
+              testimonialHTML += '<div class="transformation-caption"><strong>' + firstname;
+              testimonialHTML += ' Transformation</strong></div>';
+              testimonialHTML += '<img class="transformation-img" src="' + details.images;
+              testimonialHTML += '" alt="' + details.images.split(".")[0] + '"></img>';
             };
             testimonialHTML += '</li>';
           });

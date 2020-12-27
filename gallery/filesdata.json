@@ -1,4 +1,37 @@
-[
-    {"path": "\images\U Jack 1.jpg", thumbnail: "", active: " active", caption: "see hot stones in action"},
-    {"path": "\images\U Massage Gun.mp4", thumbnail: "\images\U Massage Gun 1.jpg", active: "", caption: "massager"}
-]
+{
+   "\\images\\gallery\\Hot Stone Therapy.mp4":{
+      "type":"video",
+      "thumbnail":"\\images\\gallery\\Hot Stones Thumbnail.png",
+      "active":" active",
+      "caption":"Hot stone therapy relaxes muscles during a massage session.",
+      "alt":"Image of hot stones on a man's back"
+   },
+   "\\images\\gallery\\Massage Gun.mp4":{
+      "type":"video",
+      "thumbnail":"\\images\\gallery\\Massage Gun Thumbnail.png",
+      "active":"",
+      "caption":"The massage gun gets deep into muscles to work out stiffness and pain.",
+      "alt":"Video of a massage gun working on a woman's back."
+   },
+   "\\images\\gallery\\Skincare.mp4":{
+      "type":"video",
+      "thumbnail":"\\images\\gallery\\Skincare Thumbnail.png",
+      "active":"",
+      "caption":"Skincare.",
+      "alt":"Video of skincare work."
+   },
+   "\\images\\gallery\\G5 Machine.mp4":{
+      "type":"video",
+      "thumbnail":"\\images\\gallery\\G5 Thumbnail.png",
+      "active":"",
+      "caption":"Laser Lipo in Action",
+      "alt":"Laser Lipo in Action"
+   },
+   "\\images\\gallery\\Lipo screens.png":{
+      "type":"picture",
+      "thumbnail":"",
+      "active":"",
+      "caption":"The laser liposuction machine",
+      "alt":"chinese magic"
+   }
+}

@@ -80,6 +80,19 @@
           right or click on the arrows to browse the gallery. You can request a booking
           <a href="\bookings">here</a> for any services you are interested in.
         </p>
+        
+        <div id="photoGallery" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div class="carousel-inner" id="innerCarousel"></div>
+          <a class="carousel-control-prev" href="#photoGallery" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#photoGallery" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
       </main>
       
       <footer class="row">
@@ -136,6 +149,26 @@
           };
         });
 
+        $.getJSON('filesdata.json', function(data) {
+          let carouselItemHTML = '';
+          $.each(data, function(path, details) {
+            carouselItemHTML += '<div class="carousel-item' + details.active + '">';
+            carouselItemHTML += '<h6>' + details.caption + '</h6>';
+            if (details.type == "picture") {
+              carouselItemHTML += '<img src="' + path + '" class="d-block w-100 carousel-img" alt="' + details.alt + '">';
+            } else {
+              carouselItemHTML += '<video class="d-block w-100 carousel-img"';
+              if (details.thumbnail != "") {
+                carouselItemHTML += ' poster="' + details.thumbnail + '"';
+              };
+              carouselItemHTML += ' controls loop><source src="' + path;
+              carouselItemHTML += '" type="video/mp4">Sorry, this video is unplayable.</video>';
+            };
+            carouselItemHTML += '</div>';
+          });
+          $("#innerCarousel").html(carouselItemHTML);
+        });
+        
       });
 
     </script>
