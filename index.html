@@ -5,12 +5,15 @@
     <meta name="description" content="Your One-Stop Well-Being Guru">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirum Vita</title>
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/file assets/jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" href="/file assets/bootstrap.min.css">
+    <script src="/file assets/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet"> 
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/charmonman-v5-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/charmonman-v5-latin-700.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/montserrat-v15-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/montserrat-v15-latin-600.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/montserrat-v15-latin-600italic.woff2" crossorigin>
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
@@ -86,6 +89,19 @@
           services <a href="\services">here</a>. I hope you never need me, but if you do, I am
           here for you. I wish you good mental and physical health.
         </p>
+        
+        <div id="bookingPrompt">
+          <h4>Great to see you again!</h4>
+          <p>We see that you have visited our website a few times before. If you have yet
+            to reach out to us regarding a booking, please contact us through the form
+            <a href="\bookings">here</a> so that we can get you on a path to healing!
+            We hope to speak to you soon!
+          <p>
+          <div class="customizationChoiceContainer">
+            <a class="customizationChoice" id="closeBookingPrompt">Check Back Later</a>
+            <a class="customizationChoice" id="removeBookingPrompt">Do Not Ask Again</a>
+          <div>
+        </div>
       </main>
       
       <footer class="row">
@@ -99,9 +115,21 @@
         </div>
       </footer>
       
+      <div id="cookieConsent">
+        <a href="\privacy" target="_blank">We would like to use cookies</a>
+        to analyze your usage and customize your experience. Please choose one:<br>
+        <div class="customizationChoiceContainer pt-2">
+          <a class="customizationChoice" id="yesCookies">Cookies are OK</a>
+          <a class="customizationChoice" id="noCookies">Please no Cookies</a>
+        </div>
+      </div>
+      
     </div>
     
     <script>
+    
+      var visitLength = 1; //in hours
+      var longCookieExpiry = 7305; //in days
         
       function togglerSwap() {
         var navToggleImg = document.getElementById("navToggleImg");
@@ -111,8 +139,58 @@
           navToggleImg.src = "/images/expand-navbar.png";
         };
       };
-    
+      
+      function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/; SameSite=Lax";
+      }
+
+      function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      function checkCookie(cname) {
+        var user = getCookie(cname);
+        return (user != "");
+      }
+      
+      function showBookingPrompt () {
+        if (!checkCookie("cookiesAllowed") ||
+            getCookie("cookiesAllowed") == "false" ||
+            checkCookie("closePromptForVisit") ||
+            getCookie("bookingRequested") == "true" ||
+            getCookie("allowBookingPrompt") == "false") {
+          return false;
+        } else {
+          return true;
+        };
+      }
+
       $(document).ready(function(){
+        
+        if (showBookingPrompt()) {
+          $("#bookingPrompt").show();
+        };
+          
+        if (getCookie("cookiesAllowed") == "true" &&
+            !checkCookie("currentlyVisiting")) {
+          var numVisit = parseInt(getCookie("numberVisits")) + 1;
+          setCookie("numberVisits", numVisit.toString(), longCookieExpiry);
+          setCookie("currentlyVisiting", "true", (visitLength/24));
+        };
 
         function buildSubnav(mediaQuery) {
           if (mediaQuery.matches) {
@@ -140,6 +218,36 @@
           if (isLargeNav) {
             $(".sub-nav-item").hide(350);
           };
+        });
+        
+        if (!checkCookie("cookiesAllowed")) {
+          setTimeout(function () {
+            $("#cookieConsent").fadeIn(200);
+          }, 1000);
+        };
+        
+        $("#yesCookies").click(function() {
+          $("#cookieConsent").fadeOut(200);
+          setCookie("cookiesAllowed", "true", longCookieExpiry);
+          setCookie("currentlyVisiting", "true", (visitLength/24));
+          setCookie("numberVisits", "1", longCookieExpiry);
+          setCookie("bookingRequested", "false", longCookieExpiry);
+          setCookie("allowBookingPrompt", "true", longCookieExpiry);
+        });
+        
+        $("#noCookies").click(function() {
+          $("#cookieConsent").fadeOut(200);
+          setCookie("cookiesAllowed", "false", longCookieExpiry);
+        });
+        
+        $("#closeBookingPrompt").click(function() {
+          $("bookingPrompt").hide();
+          setCookie("closePromptForVisit", "true", (visitLength/24));
+        });
+        
+        $("#removeBookingPrompt").click(function() {
+          $("bookingPrompt").hide();
+          setCookie("allowBookingPrompt", "false", longCookieExpiry);
         });
 
       });

@@ -3,35 +3,35 @@
       "type":"video",
       "thumbnail":"\\images\\gallery\\Hot Stones Thumbnail.png",
       "active":" active",
-      "caption":"Hot stone therapy relaxes muscles during a massage session.",
+      "caption":"Hot stone therapy relaxes muscles during a massage session. No matter your ailment, the heat and pressure from this helps to promote muscle health.",
       "alt":"Image of hot stones on a man's back"
    },
    "\\images\\gallery\\Massage Gun.mp4":{
       "type":"video",
       "thumbnail":"\\images\\gallery\\Massage Gun Thumbnail.png",
       "active":"",
-      "caption":"The massage gun gets deep into muscles to work out stiffness and pain.",
+      "caption":"The massage gun gets deep into muscles to work out stiffness and pain. Ideal for athletes, people with physically demanding jobs, and sufferers of chronic pain.",
       "alt":"Video of a massage gun working on a woman's back."
    },
    "\\images\\gallery\\Skincare.mp4":{
       "type":"video",
       "thumbnail":"\\images\\gallery\\Skincare Thumbnail.png",
       "active":"",
-      "caption":"Skincare.",
+      "caption":"Skin is the most important organ. Removing toxins and blackheads, as well as purifying skin with masks help keep your skin healthy and glowing.",
       "alt":"Video of skincare work."
    },
    "\\images\\gallery\\G5 Machine.mp4":{
       "type":"video",
       "thumbnail":"\\images\\gallery\\G5 Thumbnail.png",
       "active":"",
-      "caption":"Laser Lipo in Action",
+      "caption":"Laser Liposuction removes fat and cellulite while toning the muscles. This helps achieve your preferred body shape.",
       "alt":"Laser Lipo in Action"
    },
    "\\images\\gallery\\Lipo screens.png":{
       "type":"picture",
       "thumbnail":"",
       "active":"",
-      "caption":"The laser liposuction machine",
+      "caption":"Laser liposuction comprises of four different treatment types. Investing in the right technology will help you more quickly achieve your goals.",
       "alt":"chinese magic"
    }
 }

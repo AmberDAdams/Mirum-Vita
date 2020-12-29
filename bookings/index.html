@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="\file assets\bootstrap.min.css">
     <script src="\file assets\bootstrap.min.js"></script>
     <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet"> 
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/charmonman-v5-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/charmonman-v5-latin-700.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/montserrat-v15-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/montserrat-v15-latin-600.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/file assets/montserrat-v15-latin-600italic.woff2" crossorigin>
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
@@ -178,7 +181,7 @@
             </span>
           </div>
           <div class="form-element">
-            <label for="summary" class="large-label">Summary of Personal History and Problems to be Fixed</label>
+            <label for="summary" class="large-label">Summary of Personal History and Problems Which I Can Help With</label>
             <textarea id="summary" name="personal_summary" placeholder="What can Meredith help you with?" required></textarea>
           </div>
           <button onclick="sendBookingRequest()" type="submit" name="submit" class="btn btn-info mt-3">
@@ -199,6 +202,15 @@
         </div>
       </footer>
       
+      <div id="cookieConsent">
+        <a href="\privacy" target="_blank">We would like to use cookies</a>
+        to analyze your usage and customize your experience. Please choose one:<br>
+        <div class="customizationChoiceContainer pt-2">
+          <a class="customizationChoice" id="yesCookies">Cookies are OK</a>
+          <a class="customizationChoice" id="noCookies">Please no Cookies</a>
+        </div>
+      </div>
+      
     </div>
     
     <script type="text/javascript"
@@ -206,6 +218,9 @@
     </script>
     
     <script>
+    
+      var visitLength = 1; //in hours
+      var longCookieExpiry = 7305; //in days
         
       function togglerSwap() {
         var navToggleImg = document.getElementById("navToggleImg");
@@ -215,6 +230,33 @@
           navToggleImg.src = "/images/expand-navbar.png";
         };
       };
+      
+      function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/; SameSite=Lax";
+      }
+
+      function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      function checkCookie(cname) {
+        var user = getCookie(cname);
+        return (user != "");
+      }
       
       function filled(form_entries) {
         if (arguments.visitor_name == "" || arguments.visitor_db == "" ||
@@ -250,6 +292,8 @@
           return;
         };
         
+        setCookie("bookingRequested", "true", 7300);
+        
         emailjs.send('mirumvita_bookingform', 'template_oyu48pk', arguments, "user_5nJXJ9g3yY33uJLBBuheX")
           .then(function(response) {
              console.log('SUCCESS!', response.status, response.text);
@@ -265,6 +309,13 @@
       emailjs.init("user_5nJXJ9g3yY33uJLBBuheX");
     
       $(document).ready(function(){
+          
+        if (getCookie("cookiesAllowed") == "true" &&
+            !checkCookie("currentlyVisiting")) {
+          var numVisit = parseInt(getCookie("numberVisits")) + 1;
+          setCookie("numberVisits", numVisit.toString(), longCookieExpiry);
+          setCookie("currentlyVisiting", "true", (visitLength/24));
+        };
 
         function buildSubnav(mediaQuery) {
           if (mediaQuery.matches) {
@@ -292,6 +343,26 @@
           if (isLargeNav) {
             $(".sub-nav-item").hide(350);
           };
+        });
+        
+        if (!checkCookie("cookiesAllowed")) {
+          setTimeout(function () {
+            $("#cookieConsent").fadeIn(200);
+          }, 1000);
+        };
+        
+        $("#yesCookies").click(function() {
+          $("#cookieConsent").fadeOut(200);
+          setCookie("cookiesAllowed", "true", longCookieExpiry);
+          setCookie("currentlyVisiting", "true", (visitLength/24));
+          setCookie("numberVisits", "1", longCookieExpiry);
+          setCookie("bookingRequested", "false", longCookieExpiry);
+          setCookie("allowBookingPrompt", "true", longCookieExpiry);
+        });
+        
+        $("#noCookies").click(function() {
+          $("#cookieConsent").fadeOut(200);
+          setCookie("cookiesAllowed", "false", longCookieExpiry);
         });
 
       });
