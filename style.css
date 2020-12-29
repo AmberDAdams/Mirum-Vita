@@ -321,6 +321,10 @@ form {
   width: 96%;
 }
 
+form a {
+  color: #c2d2db !important;
+}
+
 form .large-label {
   color: #15486a;
   display: block;
@@ -391,6 +395,11 @@ form textarea {
   height: 0;
   visibility: hidden;
   width: 0;
+}
+
+#testimonialsC2A {
+  border-bottom: 5px solid #152d3d;
+  padding: 3px 0 15px 0;
 }
 
 #testimonials {

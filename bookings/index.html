@@ -294,7 +294,7 @@
         
         setCookie("bookingRequested", "true", 7300);
         
-        emailjs.send('mirumvita_bookingform', 'template_oyu48pk', arguments, "user_5nJXJ9g3yY33uJLBBuheX")
+        emailjs.send('mirumvita_gmail', 'template_bookings', arguments, "user_5nJXJ9g3yY33uJLBBuheX")
           .then(function(response) {
              console.log('SUCCESS!', response.status, response.text);
           }, function(error) {
