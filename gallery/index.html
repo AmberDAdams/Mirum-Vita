@@ -248,12 +248,12 @@
         });
         
         $("#closeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("closePromptForVisit", "true", (visitLength/24));
         });
         
         $("#removeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("allowBookingPrompt", "false", longCookieExpiry);
         });
 

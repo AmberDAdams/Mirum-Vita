@@ -77,30 +77,30 @@
       
       <main role="main">
         <h2>Overview of Services</h2>
-        <p>Meredith has expertise in both physical and mental treatments. From skin and muscles
-          acting up to serious joint conditions and mobility issues, and from self-control and diet
+        <p>Meredith has expertise in both physical and mental health therapies. Including skin, muscular issues,
+          serious joint conditions and mobility issues, and from self-control and dietary
           issues to issues with self-worth and trauma recovery, Mirum Vita has services to
-          help with any of your physical and mental struggles.<br><br>Depending on your concerns and
+          help with any of your physical and mental health needs.<br><br>Depending on your concerns and
           desires, the best treatment plans may be focused on one area or a combination of multiple
-          physical and mental treatment types. It may be comprised of a singular session, or an
-          indefinite number of sessions over many years. For this reason, we begin every new client
-          with a phone consulation, where we go through your concerns and explain what the most
+          physical and mental health therapies. It may be comprised of a singular session, or an
+          indefinite number of sessions over many years. For this reason, Meredith begins every new client
+          with a phone consulation, where together you will go through your concerns and explain what the most
           proper types of treatments would be. From there, we can schedule your first session
-          and begin your path to recovery.<br><br>You can read more detail about our two service types,
-          physical and mental, through the links below. If you are interested in our services,
-          please make a booking request through the form <a href="\bookings">here</a>. We are
+          and begin your path to recovery.<br><br>You can read more detail about our two service types, for
+          physical and mental health well-being, through the links below. If you are interested in our services,
+          please make a booking request through the form <a href="\bookings">here</a>. Meredith is
           looking forward to helping you!
         </p>
         <div class="text-center pb-3">
-          <a href="\services\physical">View Physical Details</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-          <a href="\services\mental">View Mental Details</a>
+          <a href="\services\physical">View Physical Health Therapies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="\services\mental">View Mental Health Therapies</a>
         </div>
         
         <div id="bookingPrompt">
           <h4>Great to see you again!</h4>
           <p>We see that you have visited our website a few times before. If you have yet
             to reach out to us regarding a booking, please contact us through the form
-            <a href="\bookings">here</a> so that we can get you on a path to healing!
+            <a href="\bookings">here</a> so that Meredith can get you on a path to healing!
             We hope to speak to you soon!
           <p>
           <div class="customizationChoiceContainer">
@@ -178,7 +178,8 @@
             getCookie("cookiesAllowed") == "false" ||
             checkCookie("closePromptForVisit") ||
             getCookie("bookingRequested") == "true" ||
-            getCookie("allowBookingPrompt") == "false") {
+            getCookie("allowBookingPrompt") == "false" ||
+            getCookie("numberVisits")<3) {
           return false;
         } else {
           return true;
@@ -247,12 +248,12 @@
         });
         
         $("#closeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("closePromptForVisit", "true", (visitLength/24));
         });
         
         $("#removeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("allowBookingPrompt", "false", longCookieExpiry);
         });
 

@@ -79,7 +79,7 @@
       
         <h2>Testimonials</h2>
         <p id="testimonialsC2A">
-          Have you had your own life-changing experience with Mirum Vita? If you would like to add your own testimonial, you can send us your story
+          Have you had your own life-changing experience with Meredith and Mirum Vita? If you would like to add your own testimonial, you can send us your story
           <a href="\testimonials\send" target="_blank">here</a> or leave a review on our
           <a href="https://www.facebook.com/mirumvita/" target="_blank">Facebook page</a>.
         </p>
@@ -89,7 +89,7 @@
           <h4>Great to see you again!</h4>
           <p>We see that you have visited our website a few times before. If you have yet
             to reach out to us regarding a booking, please contact us through the form
-            <a href="\bookings">here</a> so that we can get you on a path to healing!
+            <a href="\bookings">here</a> so that Meredith can get you on a path to healing!
             We hope to speak to you soon!
           <p>
           <div class="customizationChoiceContainer">
@@ -167,7 +167,8 @@
             getCookie("cookiesAllowed") == "false" ||
             checkCookie("closePromptForVisit") ||
             getCookie("bookingRequested") == "true" ||
-            getCookie("allowBookingPrompt") == "false") {
+            getCookie("allowBookingPrompt") == "false" ||
+            getCookie("numberVisits")<3) {
           return false;
         } else {
           return true;
@@ -208,7 +209,7 @@
             testimonialHTML += '</li>';
           });
           testimonialHTML += '<blockquote class="pt-4"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-          testimonialHTML += 'You can have similar changes in your life! Use the form ';
+          testimonialHTML += 'If you want similar changes in your life, you can use the form ';
           testimonialHTML += '<a href="/bookings">here</a> to get started with us.</strong></blockquote>';
           $("#testimonials").html(testimonialHTML);
         });
@@ -262,12 +263,12 @@
         });
         
         $("#closeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("closePromptForVisit", "true", (visitLength/24));
         });
         
         $("#removeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("allowBookingPrompt", "false", longCookieExpiry);
         });
 

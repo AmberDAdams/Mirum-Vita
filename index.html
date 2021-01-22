@@ -77,11 +77,13 @@
       
       <main role="main" id="homepage-main">
         <h2>Welcome to Mirum Vita, Life's Wonder!</h2>
+        <img src="\images\homepage img.png" id="homeImg" align="right"/>
         <p>My name is Meredith, and I am your one-stop well-being guru!<br><br>From a young age, I have always had the
           ability to make people feel better, from stroking their forehead when they had a headache to applying my hands
           firmly in a deep tissue massage for more complicated muscle issues. My gift of healing was extremely useful
           in my career as a rehabilitation nurse, then as a care manager for the elderly and physically disabled, before
-          attaining my Ph.D. in behavioural sciences.<br><br>My holistic and friendly approach to all my clients means
+          attaining my Ph.D. in behavioural sciences. I have recently also completed an advanced diploma in CBT.
+          <br><br>My holistic and friendly approach to all my clients means
           that we will address every single aspect of your well-being, together. The end game is to ensure that you are
           the best you can be, both physically and emotionally.<br><br>All my services are carried out at either my home
           or your home, not at a clinical environment, and I think that this is extremely important for both of us as it
@@ -94,7 +96,7 @@
           <h4>Great to see you again!</h4>
           <p>We see that you have visited our website a few times before. If you have yet
             to reach out to us regarding a booking, please contact us through the form
-            <a href="\bookings">here</a> so that we can get you on a path to healing!
+            <a href="\bookings">here</a> so that Meredith can get you on a path to healing!
             We hope to speak to you soon!
           <p>
           <div class="customizationChoiceContainer">
@@ -172,7 +174,8 @@
             getCookie("cookiesAllowed") == "false" ||
             checkCookie("closePromptForVisit") ||
             getCookie("bookingRequested") == "true" ||
-            getCookie("allowBookingPrompt") == "false") {
+            getCookie("allowBookingPrompt") == "false" ||
+            getCookie("numberVisits")<3) {
           return false;
         } else {
           return true;
@@ -241,12 +244,12 @@
         });
         
         $("#closeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("closePromptForVisit", "true", (visitLength/24));
         });
         
         $("#removeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("allowBookingPrompt", "false", longCookieExpiry);
         });
 

@@ -85,9 +85,9 @@
           <section id="massage" class="col-12 col-md-6 leftmost-item">
             <h4>Body Massage Therapy</h4>
             <p>Massage therapy is the oldest tried and tested therapy in the world! Historically, massage has always served to assist in many
-              aspects of one’s well-being. In addition to my healing hands, I employ traditional treatments like hot stones in combination
-              with modern therapy guns and massagers to create a holistic approach to healing the body and mind. I often combine two or three
-              therapies at any given time to ensure my clients get the absolute best results in the shortest time possible.
+              aspects of one’s well-being. In addition to Meredith's healing hands, we employ traditional treatments and therapies like hot stones in combination
+              with modern therapy guns and massagers to create a holistic approach to healing the body and mind. We often combine two or three
+              therapies at any given time to ensure that clients get the absolute best results in the shortest time possible.
             </p>
           </section>
           <section id="lipo" class="col-12 col-md-6">
@@ -107,7 +107,7 @@
           <h4>Great to see you again!</h4>
           <p>We see that you have visited our website a few times before. If you have yet
             to reach out to us regarding a booking, please contact us through the form
-            <a href="\bookings">here</a> so that we can get you on a path to healing!
+            <a href="\bookings">here</a> so that Meredith can get you on a path to healing!
             We hope to speak to you soon!
           <p>
           <div class="customizationChoiceContainer">
@@ -185,7 +185,8 @@
             getCookie("cookiesAllowed") == "false" ||
             checkCookie("closePromptForVisit") ||
             getCookie("bookingRequested") == "true" ||
-            getCookie("allowBookingPrompt") == "false") {
+            getCookie("allowBookingPrompt") == "false" ||
+            getCookie("numberVisits")<3) {
           return false;
         } else {
           return true;
@@ -254,12 +255,12 @@
         });
         
         $("#closeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("closePromptForVisit", "true", (visitLength/24));
         });
         
         $("#removeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("allowBookingPrompt", "false", longCookieExpiry);
         });
 

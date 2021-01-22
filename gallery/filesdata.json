@@ -4,7 +4,7 @@
       "thumbnail":"\\images\\gallery\\Hot Stones Thumbnail.png",
       "active":" active",
       "caption":"Hot stone therapy relaxes muscles during a massage session. No matter your ailment, the heat and pressure from this helps to promote muscle health.",
-      "alt":"Image of hot stones on a man's back"
+      "alt":"Video of hot stone therapy at work on a woman's back."
    },
    "\\images\\gallery\\Massage Gun.mp4":{
       "type":"video",
@@ -18,20 +18,27 @@
       "thumbnail":"\\images\\gallery\\Skincare Thumbnail.png",
       "active":"",
       "caption":"Skin is the most important organ. Removing toxins and blackheads, as well as purifying skin with masks help keep your skin healthy and glowing.",
-      "alt":"Video of skincare work."
+      "alt":"Video of skincare work on a client, including blemish removal and skin steaming."
    },
    "\\images\\gallery\\G5 Machine.mp4":{
       "type":"video",
       "thumbnail":"\\images\\gallery\\G5 Thumbnail.png",
       "active":"",
       "caption":"Laser Liposuction removes fat and cellulite while toning the muscles. This helps achieve your preferred body shape.",
-      "alt":"Laser Lipo in Action"
+      "alt":"Video of the laser liposuction machine being used on a client."
    },
    "\\images\\gallery\\Lipo screens.png":{
       "type":"picture",
       "thumbnail":"",
       "active":"",
       "caption":"Laser liposuction comprises of four different treatment types. Investing in the right technology will help you more quickly achieve your goals.",
-      "alt":"chinese magic"
+      "alt":"Images showing screens of the laser liposuction machine."
+   },
+   "\\images\\gallery\\nutrition.png": {
+      "type": "picture",
+      "thumbnail": "",
+      "active": "",
+      "caption": "Eat yourself healthy. Especially when combined with proper physical and mental health therapies, diet is instrumental in reaching your health goals. Meredith can help you learn how to create delicious, healthy, and affordable meals.",
+      "alt": "Images of example healthy meals."
    }
 }

@@ -78,7 +78,7 @@
       <main role="main">
         <div class="top-bit">
           <h2>Life Coaching Services</h2>
-          <p>At Mirum Vita, we know that mental troubles can be just as difficult as physical pains. We are here to help.</p>
+          <p>At Mirum Vita, we know that mental health issues can be just as difficult as physical pains. Meredith is here to help.</p>
         </div>
         
         <div class="row">
@@ -95,13 +95,12 @@
             <h4>Neuro-Linguistic Programming (NLP)</h4>
             <p>Often, we have self-limiting beliefs which prevent us from achieving our goals in life. Neuro-Linguistic Programming (NLP) is an
               extremely useful tool to promote one’s self-confidence and sense of worth, which builds your mindset to, for example, begin diet
-              or lifestyle changes. I can attest to the success of this therapy from experience with clients. In addition, as somebody who has
-              truly been through the mill, I can also attest that it has helped me personally!
+              or lifestyle changes. Meredith can attest to the success of this therapy from experience with clients as well as personally.
             </p>
           </section>
         </div>
         <p>Under the umbrella of forensic coaching, both CBT and NLP will help you to defeat your demons and move forward with your life.
-          Together we can get you on a positive path towards your goals and dreams. If these treatments sound right for you, please submit
+          Together we can get you on a positive path towards realistic goals. If these treatments sound right for you, please submit
           a booking request <a href="\bookings">here</a>.
         </p>
         
@@ -109,7 +108,7 @@
           <h4>Great to see you again!</h4>
           <p>We see that you have visited our website a few times before. If you have yet
             to reach out to us regarding a booking, please contact us through the form
-            <a href="\bookings">here</a> so that we can get you on a path to healing!
+            <a href="\bookings">here</a> so that Meredith can get you on a path to healing!
             We hope to speak to you soon!
           <p>
           <div class="customizationChoiceContainer">
@@ -187,7 +186,8 @@
             getCookie("cookiesAllowed") == "false" ||
             checkCookie("closePromptForVisit") ||
             getCookie("bookingRequested") == "true" ||
-            getCookie("allowBookingPrompt") == "false") {
+            getCookie("allowBookingPrompt") == "false" ||
+            getCookie("numberVisits")<3) {
           return false;
         } else {
           return true;
@@ -256,12 +256,12 @@
         });
         
         $("#closeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("closePromptForVisit", "true", (visitLength/24));
         });
         
         $("#removeBookingPrompt").click(function() {
-          $("bookingPrompt").hide();
+          $("#bookingPrompt").hide();
           setCookie("allowBookingPrompt", "false", longCookieExpiry);
         });
 
